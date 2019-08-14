@@ -27,6 +27,12 @@ conda install -c numba numba
 conda install cmake_setuptools boost-cpp cython pandas cffi rapidjson \
   double-conversion flatbuffers
 ```
+
+## Pip Dependencies
+```
+pip install cmake-setuptools
+```
+
 ## GitHub Dependencies
 ### DLPack
 ```
