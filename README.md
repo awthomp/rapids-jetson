@@ -40,4 +40,6 @@ git clone https://github.com/dmlc/dlpack.git
 cd dlpack
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX
+make -j6
+make install
 ```
