@@ -63,7 +63,7 @@ $ ./build.sh
 ```
 
 ### libcudf
-Note: I had to edit [ConfigureArrow](https://github.com/rapidsai/cudf/blob/master/cpp/cmake/Modules/ConfigureArrow.cmake) to enable building with Python since pyarrow is not available in the available conda channels. Set: `DARROW_PYTHON=ON` and `DARROW_COMPUTE=ON`
+Note: I had to edit [ConfigureArrow](https://github.com/rapidsai/cudf/blob/master/cpp/cmake/Modules/ConfigureArrow.cmake) to enable building with Python since pyarrow is not available in the available conda channels. Set: `DARROW_PYTHON=ON`, `DARROW_COMPUTE=ON`, and `DARROW_BUILD_SHARED=ON`
 
 Note: I could not get a successful build of libcudf with parallel compilation, i.e. `make -j6` and edited the build.sh script to build with one core.
 
@@ -72,4 +72,9 @@ $ git clone --recurse-submodules https://github.com/rapidsai/cudf.git
 $ cd cudf
 $ ./build.sh libcudf
 ```
-
+Install Python Arrow bindings
+```
+$ cd cpp/build/arrow/arrow/python
+$ python setup.py build_ext --inplace
+$ python setup.py install --single-version-externally-managed --record=record.txt
+```
