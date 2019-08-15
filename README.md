@@ -23,23 +23,47 @@ $ conda config --add channels conda-forge
 # cuDF
 ## Conda Dependencies
 ```
-conda install -c numba numba
-conda install cmake_setuptools boost-cpp cython pandas cffi rapidjson \
+$ conda install -c numba numba
+$ conda install cmake_setuptools boost-cpp cython pandas cffi rapidjson \
   double-conversion flatbuffers
 ```
 
 ## Pip Dependencies
 ```
-pip install cmake-setuptools
+$ pip install cmake-setuptools
 ```
 
 ## GitHub Dependencies
 ### DLPack
 ```
-git clone https://github.com/dmlc/dlpack.git
-cd dlpack
-mkdir build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX
-make -j6
-make install
+$ git clone https://github.com/dmlc/dlpack.git
+$ cd dlpack
+$ mkdir build && cd build
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX
+$ make -j6
+$ make install
+```
+
+## Install Directions
+### RMM
+```
+$ git clone --recurse-submodules https://github.com/rapidsai/rmm.git
+$ cd rmm
+$ mkdir build && cd build
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX
+$ make -j6
+$ make install
+```
+
+### cuStrings
+```
+$ git clone --recurse-submodules https://github.com/rapidsai/custrings.git
+$ cd custrings
+$ ./build.sh
+```
+
+### cuDF
+``$ git clone --recurse-submodules https://github.com/rapidsai/cudf.git
+$ cd cudf
+$ ./build.sh libcudf
 ```
