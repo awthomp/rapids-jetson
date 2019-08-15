@@ -63,7 +63,8 @@ $ ./build.sh
 ```
 
 ### cuDF
-``$ git clone --recurse-submodules https://github.com/rapidsai/cudf.git
+```
+$ git clone --recurse-submodules https://github.com/rapidsai/cudf.git
 $ cd cudf
 $ ./build.sh libcudf
 ```
