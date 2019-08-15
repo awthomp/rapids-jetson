@@ -62,9 +62,14 @@ $ cd custrings
 $ ./build.sh
 ```
 
-### cuDF
+### libcudf
+Note: I had to edit [ConfigureArrow](https://github.com/rapidsai/cudf/blob/master/cpp/cmake/Modules/ConfigureArrow.cmake) to enable building with Python since pyarrow is not available in the available conda channels. Set: `DARROW_PYTHON=ON`.
+
+Note: I could not get a successful build of libcudf with parallel compilation, i.e. `make -j6` and edited the build.sh script to build with one core.
+
 ```
 $ git clone --recurse-submodules https://github.com/rapidsai/cudf.git
 $ cd cudf
 $ ./build.sh libcudf
 ```
+
