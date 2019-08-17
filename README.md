@@ -72,6 +72,9 @@ $ git clone --recurse-submodules https://github.com/rapidsai/cudf.git
 $ cd cudf
 $ ./build.sh libcudf
 ```
+Add Arrow install directory to LD_LIBRARY_PATH
+`export LD_LIBRARY_PATH=<...>/cpp/build/arrow/install/lib`
+
 Install Python Arrow bindings
 ```
 $ cd cpp/build/arrow/arrow/python
