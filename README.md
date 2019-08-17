@@ -80,7 +80,7 @@ $ python setup.py install --single-version-externally-managed --record=record.tx
 ```
 
 ### cuDF
-I had to edit cudf's setup.py to add the include dir for Arrow, adding cpp/build/arrow/install/include
+I had to edit cudf's setup.py to add the include dir for Arrow, adding `cpp/build/arrow/install/include`
 ```
 $ ./build.sh cudf
 ```
