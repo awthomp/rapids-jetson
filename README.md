@@ -78,3 +78,10 @@ $ cd cpp/build/arrow/arrow/python
 $ python setup.py build_ext --inplace
 $ python setup.py install --single-version-externally-managed --record=record.txt
 ```
+
+### cuDF
+I had to edit cudf's setup.py to add the include dir for Arrow, adding cpp/build/arrow/install/include
+```
+$ ./build.sh cudf
+```
+
