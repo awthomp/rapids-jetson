@@ -24,7 +24,7 @@ $ conda config --add channels conda-forge
 ## Conda Dependencies
 ```
 $ conda install -c numba numba
-$ conda install cmake_setuptools boost-cpp cython pandas cffi rapidjson \
+$ conda install cmake boost-cpp cython pandas cffi rapidjson \
   double-conversion flatbuffers
 ```
 
