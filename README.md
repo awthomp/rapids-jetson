@@ -73,7 +73,8 @@ $ cd cudf
 $ ./build.sh libcudf
 ```
 Add Arrow install directory to LD_LIBRARY_PATH
-`export LD_LIBRARY_PATH=<...>/cpp/build/arrow/install/lib`
+
+`export LD_LIBRARY_PATH=<...>/cpp/build/arrow/install/lib:$LD_LIBRARY_PATH`
 
 Install Python Arrow bindings
 ```
