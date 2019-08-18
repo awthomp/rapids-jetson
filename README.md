@@ -12,6 +12,8 @@ CUDA/GPU requirements:
 * NVIDIA driver 396.44+
 * Pascal architecture or better
 
+`sudo apt install libprotobuf-dev libprotoc-dev`
+
 # Create and enable swap space
 I followed [this link](https://devtalk.nvidia.com/default/topic/1041894/jetson-agx-xavier/creating-a-swap-file/)
 
