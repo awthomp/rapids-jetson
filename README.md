@@ -79,6 +79,10 @@ Add Arrow install directory to LD_LIBRARY_PATH
 
 `export LD_LIBRARY_PATH=<...>/cpp/build/arrow/install/lib:$LD_LIBRARY_PATH`
 
+Add Arrow install directory to ARROW_HOME
+
+`export ARROW_HOME=<...>/cpp.build/arrow/install`
+
 Install Python Arrow bindings
 ```
 $ cd cpp/build/arrow/arrow/python
