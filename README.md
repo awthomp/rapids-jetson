@@ -12,6 +12,9 @@ CUDA/GPU requirements:
 * NVIDIA driver 396.44+
 * Pascal architecture or better
 
+# Create and enable swap space
+I followed [this link](https://devtalk.nvidia.com/default/topic/1041894/jetson-agx-xavier/creating-a-swap-file/)
+
 ## Conda For ARM
 * Install [conda4aarch64](https://github.com/jjhelmus/conda4aarch64/releases).
 * Add c4aarch64 and conda-forge channels to conda configuration
