@@ -12,7 +12,7 @@ CUDA/GPU requirements:
 * NVIDIA driver 396.44+
 * Pascal architecture or better
 
-`sudo apt install libprotobuf-dev libprotoc-dev zstd`
+`sudo apt install libprotobuf-dev libprotoc-dev thrift-compiler`
 
 # Create and enable swap space
 I followed [this link](https://devtalk.nvidia.com/default/topic/1041894/jetson-agx-xavier/creating-a-swap-file/)
@@ -30,7 +30,7 @@ $ conda config --add channels conda-forge
 ```
 $ conda install -c numba numba
 $ conda install cmake boost-cpp cython pandas cffi rapidjson \
-  double-conversion flatbuffers
+  double-conversion flatbuffers thrift zstd
 ```
 
 ## Pip Dependencies
@@ -93,7 +93,7 @@ Add Arrow install directory to LD_LIBRARY_PATH
 
 Add Arrow install directory to ARROW_HOME
 
-`export ARROW_HOME=<...>/cpp.build/arrow/install`
+`export ARROW_HOME=<...>/cpp/build/arrow/install`
 
 Compression stuff: https://stackoverflow.com/questions/48157198/how-can-i-statically-link-arrow-when-building-parquet-cpp
 
