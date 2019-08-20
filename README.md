@@ -12,7 +12,7 @@ CUDA/GPU requirements:
 * NVIDIA driver 396.44+
 * Pascal architecture or better
 
-`sudo apt install libprotobuf-dev libprotoc-dev`
+`sudo apt install libprotobuf-dev libprotoc-dev zstd`
 
 # Create and enable swap space
 I followed [this link](https://devtalk.nvidia.com/default/topic/1041894/jetson-agx-xavier/creating-a-swap-file/)
@@ -65,6 +65,16 @@ $ make install
 $ git clone --recurse-submodules https://github.com/rapidsai/custrings.git
 $ cd custrings
 $ ./build.sh
+```
+
+### ORC
+```
+$ git clone https://github.com/apache/orc.git
+$ cd orc
+$ mkdir build && cd build
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX -DBUILD_JAVA=OFF
+$ make package
+$ make test-out
 ```
 
 ### libcudf
