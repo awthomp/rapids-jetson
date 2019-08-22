@@ -99,6 +99,7 @@ Compression stuff: https://stackoverflow.com/questions/48157198/how-can-i-static
 
 Install Python Arrow bindings
 ```
+$ export PYARROW_WITH_ORC=1
 $ cd cpp/build/arrow/arrow/python
 $ python setup.py build_ext --inplace
 $ python setup.py install --single-version-externally-managed --record=record.txt
