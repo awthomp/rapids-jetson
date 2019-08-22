@@ -29,7 +29,7 @@ $ conda config --add channels conda-forge
 ## Conda Dependencies
 ```
 $ conda install cmake boost-cpp cython pandas cffi rapidjson \
-  double-conversion flatbuffers zstd numba
+  double-conversion flatbuffers zstd numba thrift-cpp
 ```
 
 ## Pip Dependencies
