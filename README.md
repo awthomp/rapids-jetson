@@ -28,9 +28,8 @@ $ conda config --add channels conda-forge
 # cuDF
 ## Conda Dependencies
 ```
-$ conda install -c numba numba
 $ conda install cmake boost-cpp cython pandas cffi rapidjson \
-  double-conversion flatbuffers thrift zstd
+  double-conversion flatbuffers zstd numba
 ```
 
 ## Pip Dependencies
