@@ -76,6 +76,16 @@ $ make package
 $ make test-out
 ```
 
+
+### Thrift
+```
+$ git clone https://github.com/apache/thrift.git
+$ cd thrift
+$ ./bootstrap.sh
+$ ./configure --without-java --prefix=$CONDA_PREFIX
+$ make install
+```
+
 ### libcudf
 Note: I had to edit [ConfigureArrow](https://github.com/rapidsai/cudf/blob/master/cpp/cmake/Modules/ConfigureArrow.cmake) to enable building with Python since pyarrow is not available in the available conda channels. Set: `DARROW_PYTHON=ON`, `DARROW_COMPUTE=ON`, and `DARROW_BUILD_SHARED=ON`
 
