@@ -78,6 +78,7 @@ $ make test-out
 
 
 ### Thrift
+Parquet headers in Arrow use CXXFunctionals that aren't available in newer versions of Thrift. Instead, leverage v0.10.
 ```
 $ export PY_PATH=$CONDA_PREFIX
 $ git clone https://github.com/apache/thrift.git
