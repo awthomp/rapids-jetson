@@ -82,6 +82,7 @@ $ make test-out
 $ export PY_PATH=$CONDA_PREFIX
 $ git clone https://github.com/apache/thrift.git
 $ cd thrift
+$ git checkout -b 0.10.0
 $ ./bootstrap.sh
 $ ./configure --without-java --prefix=$CONDA_PREFIX
 $ sudo make install
