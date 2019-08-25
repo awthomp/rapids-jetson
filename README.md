@@ -79,11 +79,12 @@ $ make test-out
 
 ### Thrift
 ```
+$ export PY_PATH=$CONDA_PREFIX
 $ git clone https://github.com/apache/thrift.git
 $ cd thrift
 $ ./bootstrap.sh
 $ ./configure --without-java --prefix=$CONDA_PREFIX
-$ make install
+$ sudo make install
 ```
 
 ### libcudf
