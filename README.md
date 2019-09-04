@@ -90,7 +90,7 @@ $ sudo make install
 ```
 
 ### libcudf
-Note: I had to edit [ConfigureArrow](https://github.com/rapidsai/cudf/blob/master/cpp/cmake/Modules/ConfigureArrow.cmake) to enable building with Python since pyarrow is not available in the available conda channels. Set: `DARROW_PYTHON=ON`, `DARROW_COMPUTE=ON`, and `DARROW_BUILD_SHARED=ON`
+Note: I had to edit [ConfigureArrow](https://github.com/rapidsai/cudf/blob/master/cpp/cmake/Modules/ConfigureArrow.cmake) to enable building with Python since pyarrow is not available in the available conda channels. Set: `DARROW_PYTHON=ON`, `DARROW_COMPUTE=ON`, `DARROW_BUILD_SHARED=ON`, `DARROW_ORC=ON`, and `DARROW_PARQUET=ON`
 
 Note: I could not get a successful build of libcudf with parallel compilation, i.e. `make -j6` and edited the build.sh script to build with one core.
 
