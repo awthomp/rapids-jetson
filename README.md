@@ -107,6 +107,10 @@ Add Arrow install directory to ARROW_HOME
 
 `export ARROW_HOME=<...>/cpp/build/arrow/install`
 
+Add Parquet install directory to PARQUET_HOME
+
+`export PARQUET_HOME=<...>/cpp/build/arrow/install`
+
 Compression stuff: https://stackoverflow.com/questions/48157198/how-can-i-statically-link-arrow-when-building-parquet-cpp
 
 Install Python Arrow bindings
