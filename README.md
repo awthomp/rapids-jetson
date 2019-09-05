@@ -14,8 +14,8 @@ CUDA/GPU requirements:
 
 `sudo apt install libprotobuf-dev libprotoc-dev thrift-compiler`
 
-# Create and enable swap space
-I followed [this link](https://devtalk.nvidia.com/default/topic/1041894/jetson-agx-xavier/creating-a-swap-file/)
+## Create and enable swap space
+This prevents us from running out of memory while building cuDF. I followed [this link](https://devtalk.nvidia.com/default/topic/1041894/jetson-agx-xavier/creating-a-swap-file/)
 
 ## Conda For ARM
 * Install [conda4aarch64](https://github.com/jjhelmus/conda4aarch64/releases).
@@ -29,7 +29,7 @@ $ conda config --add channels conda-forge
 ## Conda Dependencies
 ```
 $ conda install cmake boost-cpp cython pandas cffi rapidjson \
-  double-conversion flatbuffers zstd numba thrift-cpp
+  double-conversion flatbuffers zstd numba
 ```
 
 ## Pip Dependencies
@@ -90,7 +90,7 @@ $ sudo make install
 ```
 
 ### libcudf
-Note: I had to edit [ConfigureArrow](https://github.com/rapidsai/cudf/blob/master/cpp/cmake/Modules/ConfigureArrow.cmake) to enable building with Python since pyarrow is not available in the available conda channels. Set: `DARROW_PYTHON=ON`, `DARROW_COMPUTE=ON`, `DARROW_BUILD_SHARED=ON`, `DARROW_ORC=ON`, and `DARROW_PARQUET=ON`
+Note: I had to edit [ConfigureArrow](https://github.com/rapidsai/cudf/blob/master/cpp/cmake/Modules/ConfigureArrow.cmake) to enable building with Python since pyarrow is not available in the conda channels. Set: `DARROW_PYTHON=ON`, `DARROW_COMPUTE=ON`, `DARROW_BUILD_SHARED=ON`, `DARROW_ORC=ON`, and `DARROW_PARQUET=ON`
 
 Note: I could not get a successful build of libcudf with parallel compilation, i.e. `make -j6` and edited the build.sh script to build with one core.
 
@@ -110,8 +110,6 @@ Add Arrow install directory to ARROW_HOME
 Add Parquet install directory to PARQUET_HOME
 
 `export PARQUET_HOME=<...>/cpp/build/arrow/install`
-
-Compression stuff: https://stackoverflow.com/questions/48157198/how-can-i-statically-link-arrow-when-building-parquet-cpp
 
 Install Python Arrow bindings
 ```
