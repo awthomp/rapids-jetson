@@ -1,0 +1,13 @@
+diff --git a/cpp/src/arrow/gpu/CMakeLists.txt b/cpp/src/arrow/gpu/CMakeLists.txt
+index caef952a..1d40a898 100644
+--- a/cpp/src/arrow/gpu/CMakeLists.txt
++++ b/cpp/src/arrow/gpu/CMakeLists.txt
+@@ -36,7 +36,7 @@ message(STATUS "CUDA Libraries: ${CUDA_LIBRARIES}")
+ 
+ set(ARROW_CUDA_SRCS cuda_arrow_ipc.cc cuda_context.cc cuda_memory.cc)
+ 
+-set(ARROW_CUDA_SHARED_LINK_LIBS ${CUDA_LIBRARIES} ${CUDA_CUDA_LIBRARY})
++set(ARROW_CUDA_SHARED_LINK_LIBS ${CUDA_LIBRARIES})
+ 
+ add_arrow_lib(arrow_cuda
+               SOURCES
