@@ -1,0 +1,35 @@
+diff --git a/build.sh b/build.sh
+index 69047784b..9422aaa7c 100755
+--- a/build.sh
++++ b/build.sh
+@@ -110,6 +110,8 @@ if (( ${NUMARGS} == 0 )) || hasArg libnvstrings; then
+     cd ${LIBNVSTRINGS_BUILD_DIR}
+     cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
+           -DCMAKE_CXX11_ABI=ON \
++	  -DCMAKE_CUDA_FLAGS="-gencode=arch=compute_72,code=sm_72" \
++	  -DUSE_NVTX=OFF \
+           -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ..
+     if [[ ${INSTALL_TARGET} != "" ]]; then
+         make -j${PARALLEL_LEVEL} install_nvstrings VERBOSE=${VERBOSE}
+@@ -137,6 +139,8 @@ if (( ${NUMARGS} == 0 )) || hasArg libcudf; then
+     cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
+           -DCMAKE_CXX11_ABI=ON \
+           -DBUILD_BENCHMARKS=${BENCHMARKS} \
++	  -DCMAKE_CUDA_FLAGS="-gencode=arch=compute_72,code=sm_72" \
++	  -DUSE_NVTX=OFF \
+           -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ..
+     if [[ ${INSTALL_TARGET} != "" ]]; then
+         make -j${PARALLEL_LEVEL} install_cudf VERBOSE=${VERBOSE}
+diff --git a/cpp/CMakeLists.txt b/cpp/CMakeLists.txt
+index d67958ff3..3666112ee 100644
+--- a/cpp/CMakeLists.txt
++++ b/cpp/CMakeLists.txt
+@@ -472,7 +472,7 @@ endif(HT_LEGACY_ALLOCATOR)
+ # - link libraries --------------------------------------------------------------------------------
+ 
+ # Get all the symbols from the Arrow CUDA Library for Cython
+-set(ARROW_CUDA_LIB_LINK -Wl,--whole-archive ${ARROW_CUDA_LIB} -Wl,--no-whole-archive)
++set(ARROW_CUDA_LIB_LINK ${ARROW_CUDA_LIB})
+ 
+ # link targets for NVStrings
+ target_link_libraries(libNVStrings rmm cudart cuda)
